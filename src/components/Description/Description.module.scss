@@ -1,0 +1,170 @@
+@import '../../index.scss';
+
+.description {
+    @include size(100%, 532px);
+    padding: 0 8px;
+    color: $black-primary;
+    background: $background;
+
+    @media (min-width: 1100px) {
+        height: 450px;
+    }
+
+    &__container {
+        @include size(100%, 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 1100px) {
+            width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 272px 56px;
+            grid-template-areas:
+                'list slider'
+                'btn slider';
+            align-items: start;
+            column-gap: 5px;
+            justify-items: start;
+        }
+
+        @media (min-width: 1150px) {
+            column-gap: 24px;
+        }
+    }
+
+    &__content {
+        width: 304px;
+
+        @media (min-width: 900px) {
+            width: 370px;
+        }
+
+        @media (min-width: 1100px) {
+            width: 480px;
+            margin-top: 20px;
+            grid-area: list;
+        }
+    }
+
+    &__title {
+        @include size(304px, 28px);
+        @include textProperties(800, 20px, 28px);
+        margin-bottom: 12px;
+
+        @media (min-width: 900px) {
+            @include size(370px, 40px);
+            @include textProperties(800, 24px, 40px);
+        }
+
+        @media (min-width: 1100px) {
+            @include size(480px, 48px);
+            @include textProperties(800, 32px, 48px);
+            margin-bottom: 16px;
+        }
+    }
+
+    &__list {
+        @include size(304px, 140px);
+        @include textProperties(800, 14px, 24px);
+        padding-left: 16px;
+        margin-bottom: 4px;
+
+        @media (min-width: 1100px) {
+            @include size(480px, 144px);
+            font-size: 16px;
+            padding-left: 18px;
+
+            & li:not(:first-child) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__slider {
+        @include size(100%, 196px);
+        max-width: 370px;
+        margin-bottom: 24px;
+        position: relative;
+        flex-shrink: 0;
+
+        @media (min-width: 1100px) {
+            @include size(592px, 328px);
+            max-width: 592px;
+            grid-area: slider;
+        }
+
+        :global(.swiper-pagination-bullet-active) {
+            width: 56px;
+            background: $black-primary;
+            @include borderRadius(4px);
+            -moz-animation: stretch 700ms, ease-in;
+            -webkit-animation: stretch 700ms, ease-in;
+            -o-animation: stretch 700ms, ease-in;
+            animation: stretch 700ms, ease-in;
+        }
+
+        &-item {
+            @include size(100%, 180px !important);
+            @include borderRadius(4px);
+
+            @media (min-width: 1100px) {
+                @include size(552px, 304px !important);
+                @include borderRadius(8px);
+            }
+
+            & img {
+                border: none;
+                @include size(100%, 100%);
+                @include borderRadius(4px);
+
+                @media (min-width: 1100px) {
+                    @include borderRadius(8px);
+                }
+            }
+        }
+
+        &-indicators {
+            li {
+                @include size(8px, 8px);
+                background: #d0dbf1;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__btn {
+        @media (min-width: 1100px) {
+            grid-area: btn;
+        }
+    }
+}
+
+@-moz-keyframes stretch {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 56px;
+    }
+}
+
+@-webkit-keyframes stretch {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 56px;
+    }
+}
+
+@keyframes stretch {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 56px;
+    }
+}

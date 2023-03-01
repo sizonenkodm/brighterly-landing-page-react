@@ -1,0 +1,93 @@
+@import '../../index.scss';
+
+.footer {
+    @include size(100%, 471px);
+    background: $blue-primary;
+
+    @media (min-width: 900px) {
+        height: 360px;
+    }
+
+    &__container {
+        @include size(calc(100% - 16px), 100%);
+        margin: 0 auto;
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+
+        @media (min-width: 900px) {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 1300px) {
+            width: calc(100% - 150px);
+        }
+    }
+
+    &__content {
+        width: calc(100% - 16px);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        order: 1;
+
+        @media (min-width: 900px) {
+            order: 2;
+            width: 400px;
+            align-self: flex-start;
+
+            @media (min-width: 1100px) {
+                width: 630px;
+                align-self: center;
+            }
+        }
+
+        & h4 {
+            @include size(304px, 72px);
+            @include textProperties(800, 16px, 24px);
+            margin: 40px 0;
+            text-align: center;
+
+            @media (min-width: 1100px) {
+                @include size(630px, 96px);
+                @include textProperties(800, 32px, 48px);
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__photo-1 {
+        @include size(150px, 202px);
+        order: 2;
+        align-self: end;
+        justify-self: start;
+
+        @media (min-width: 900px) {
+            order: 1;
+            @include size(232px, 300px);
+        }
+    }
+
+    &__photo-2 {
+        @include size(167px, 239px);
+        order: 3;
+        justify-self: end;
+        position: relative;
+        right: 14px;
+
+        @media (min-width: 900px) {
+            @include size(227px, 325px);
+            right: 0;
+        }
+    }
+
+    &__btn {
+        @media (min-width: 1100px) {
+            background: $green !important;
+        }
+    }
+}

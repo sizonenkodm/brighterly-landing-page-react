@@ -1,0 +1,10 @@
+@import '../../index.scss';
+
+.form {
+    @include size(272px, 256px);
+}
+
+.form__btn {
+    width: 100%;
+    margin-top: 24px;
+}

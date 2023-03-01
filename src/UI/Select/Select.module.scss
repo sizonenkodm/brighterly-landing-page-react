@@ -1,0 +1,28 @@
+@import '../../index.scss';
+
+.wrapper {
+    @include size(272px, 72px);
+    @include borderRadius(8px);
+    border: 1px solid $grey;
+    background: #fff;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 16px;
+
+    & label {
+        @include size(224px, 24px);
+        @include textProperties(500, 12px, 16px);
+    }
+
+    & select {
+        border: none;
+        outline: none;
+        color: $black-primary;
+        @include textProperties(500, 16px, 24px);
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+}

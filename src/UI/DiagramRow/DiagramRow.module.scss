@@ -1,0 +1,20 @@
+@import '../../index.scss';
+
+.row {
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+
+.first {
+    @include size(100%, 32px);
+    background: $green;
+    color: #fff;
+}
+
+.second {
+    @include size(55.2%, 32px);
+    background: $yellow;
+}

@@ -1,0 +1,48 @@
+@import '../../index.scss';
+
+.article {
+    @include size(100%, 1508px);
+    color: $black-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: 900px) {
+        height: 1630px;
+    }
+
+    @media (min-width: 1100px) {
+        @include size(706px, 1464px);
+    }
+
+    & h5 {
+        @include size(304px, 60px);
+        @include textProperties(800, 14px, 20px);
+
+        @media (min-width: 900px) {
+            @include size(410px, 72px);
+            @include textProperties(800, 20px, 24px);
+        }
+
+        @media (min-width: 1100px) {
+            @include size(706px, 144px);
+            @include textProperties(800, 32px, 48px);
+        }
+    }
+
+    & p {
+        @include size(304px, 1440px);
+        @include textProperties(600, 12px, 16px);
+
+        @media (min-width: 900px) {
+            @include size(410px, 1550px);
+            @include textProperties(600, 14px, 20px);
+        }
+
+        @media (min-width: 1100px) {
+            @include size(706px, 1296px);
+            @include textProperties(600, 16px, 24px);
+        }
+    }
+}

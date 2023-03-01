@@ -1,0 +1,85 @@
+@import '../../index.scss';
+
+.feedbacks {
+    @include size(100%, 531px);
+    background: $background;
+    padding: 80px 8px;
+    overflow: hidden;
+
+    @media (min-width: 900px) {
+        height: 100%;
+    }
+
+    &__container {
+        @include size(100%, 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    &__title {
+        @include size(304px, 48px);
+        @include textProperties(800, 16px, 24px);
+        color: $black-primary;
+        text-align: center;
+        margin-bottom: 16px;
+
+        @media (min-width: 900px) {
+            @include size(600px, 128px);
+            @include textProperties(700, 48px, 64px);
+            margin-bottom: 40px;
+        }
+    }
+
+    &__wrapper {
+        @include size(304px, 279px);
+
+        @media (min-width: 900px) {
+            @include size(100%, 100%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        @media (min-width: 1430px) {
+            padding: 0 100px;
+            gap: 16px;
+        }
+
+        :global(.swiper-pagination-bullet-active) {
+            background: $black-primary;
+        }
+    }
+
+    &__card {
+        @include size(100%, 100%);
+
+        & img {
+            @include size(100%, 279px);
+
+            @media (min-width: 900px) {
+                @include size(100%, 100%);
+            }
+        }
+
+        @media (min-width: 900px) {
+            @include size(392px, 100% !important);
+        }
+    }
+
+    &__indicators {
+        @media (min-width: 900px) {
+            display: none;
+        }
+
+        li {
+            @include size(12px, 12px);
+            background: transparent;
+            opacity: 1;
+            border: 2px solid $black-primary;
+        }
+    }
+}

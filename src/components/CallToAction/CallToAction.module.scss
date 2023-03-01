@@ -1,0 +1,155 @@
+@import '../../index.scss';
+
+.call-to-action {
+    @include size(100%, 545px);
+    background: $background;
+
+    @media (min-width: 1100px) {
+        height: 590px;
+    }
+
+    &__container {
+        @include size(calc(100% - 16px), 100%);
+        margin: 0 auto;
+
+        @media (min-width: 1100px) {
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 1300px) {
+            padding-right: 109px;
+        }
+    }
+
+    &__content {
+        @include size(100%, 354px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (min-width: 1100px) {
+            @include size(600px, 510px);
+            padding-left: 107px;
+            padding-bottom: 52px;
+            align-items: flex-start;
+        }
+
+        & p {
+            @include size(304px, 60px);
+            @include textProperties(800, 14px, 20px);
+            color: $black-primary;
+
+            @media (min-width: 1100px) {
+                @include size(600px, 84px);
+                @include textProperties(800, 20px, 28px);
+                text-align: start;
+            }
+
+            & span {
+                color: $green;
+            }
+        }
+    }
+
+    &__title {
+        @include size(304px, 56px);
+        @include textProperties(800, 20px, 28px);
+        color: $black-primary;
+        text-align: center;
+        margin-top: 16px;
+
+        @media (min-width: 1100px) {
+            @include size(500px, 128px);
+            @include textProperties(800, 48px, 64px);
+            text-align: start;
+        }
+    }
+
+    &__grades {
+        @include size(93px, 32px);
+        @include textProperties(800, 14px, 24px);
+        @include borderRadius(4px);
+        padding: 4px 8px;
+        background: $grey;
+        color: $black-primary;
+        text-align: center;
+
+        @media (min-width: 1100px) {
+            display: none;
+        }
+    }
+
+    &__list {
+        @include size(304px, 88px);
+        @include textProperties(600, 12px, 16px);
+        color: $black-primary;
+        padding-left: 20px;
+
+        @media (min-width: 1100px) {
+            @include size(568px, 104px);
+            @include textProperties(600, 16px, 24px);
+        }
+
+        & li {
+            padding-left: 8px;
+
+            &:not(:first-child) {
+                margin-top: 12px;
+
+                @media (min-width: 1100px) {
+                    margin-top: 14px;
+                }
+            }
+
+            &::marker {
+                @include textProperties(600, 16px, 16px);
+
+                @media (min-width: 1100px) {
+                    @include textProperties(600, 24px, 24px);
+                }
+            }
+
+            & span {
+                position: relative;
+                top: -2px;
+            }
+        }
+
+        & :first-child {
+            list-style-type: '👩‍🏫';
+        }
+
+        & :nth-child(2) {
+            list-style-type: '📊';
+        }
+
+        & :last-child {
+            list-style-type: '📄';
+        }
+    }
+
+    &__img {
+        @include size(100%, 135px);
+        @include borderRadius(8px);
+        text-align: center;
+        background: #fff;
+        margin-top: 16px;
+
+        @media (min-width: 1100px) {
+            @include size(496px, 527px);
+            background: transparent;
+        }
+
+        & img {
+            @include size(128px, 135px);
+
+            @media (min-width: 1100px) {
+                @include size(100%, 100%);
+            }
+        }
+    }
+}

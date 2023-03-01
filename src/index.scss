@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
+$black-primary: #0d2a54;
+$blue-primary: #2b41b7;
+$blue-secondary: #3b53cd;
+$blue-light: #778bf3;
+$yellow: #ff9900;
+$green: #30c690;
+$red: #ef4444;
+$background: #faf8f6;
+$red-hover: #dc2626;
+$red-pressed: #f87171;
+$grey: #d0dbf1;
+$green-dark: #06a66c;
+$shadow: 0px 4px 8px rgba(0, 0, 0, 0.02), 0px 4px 17px rgba(0, 0, 0, 0.14), 0px 4px 22px rgba(0, 0, 0, 0.12);
+
+@mixin borderRadius($br) {
+  -moz-border-radius: $br;
+  -webkit-border-radius: $br;
+  -o-border-radius: $br;
+  border-radius: $br;
+}
+
+@mixin boxShadow($bs) {
+  -moz-box-shadow: $bs;
+  -webkit-box-shadow: $bs;
+  -o-border-radius: $bs;
+  box-shadow: $bs;
+}
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin textProperties($fw, $fs, $lh) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include size(100%, 100%);
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  border: 1px solid $background;
+  font-family: 'Montserrat';
+  font-style: normal;
+}
+
+.indicators {
+  position: absolute;
+  right: 0;
+  --swiper-pagination-bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+
+  li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    @include borderRadius(50%);
+    margin: 0 4px;
+  }
+}
+
+.new-line-after-900 {
+  display: none;
+
+  @media (min-width: 900px) {
+    display: block;
+  }
+}
+
+.new-line-after-1100 {
+  display: none;
+
+  @media (min-width: 1100px) {
+    display: block;
+  }
+}

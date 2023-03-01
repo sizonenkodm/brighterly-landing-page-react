@@ -1,0 +1,22 @@
+@import '../../index.scss';
+
+.header {
+    @include size(100%, 48px);
+    background: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 1100px) {
+        height: 72px;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+
+    &__logo {
+        @media (min-width: 1100px) {
+            @include size(114px, 40px);
+            margin-left: 107px;
+        }
+    }
+}
